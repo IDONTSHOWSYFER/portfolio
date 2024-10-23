@@ -1,0 +1,103 @@
+/* Définition des variables CSS pour une meilleure maintenabilité */
+/* Thème sombre */
+:root {
+    --color-background: #000000;
+    --color-primary: #00ff00;
+    --color-secondary: #00cc00;
+    --color-text: #ffffff;
+    --color-section-bg: #111111;
+    --color-border: #00ff00;
+    --color-button-text: #000000;
+    --color-modal-bg: rgba(0, 0, 0, 0.8);
+
+    --font-family: 'Hack', monospace;
+    --transition-duration: 0.3s;
+
+    /* Tailles de police responsive */
+    --font-size-base: 16px;
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.75rem;
+    --font-size-h4: 1.5rem;
+    --font-size-h5: 1.25rem;
+    --font-size-h6: 1rem;
+
+    /* Largeurs */
+    --max-width: 1200px;
+    --padding-section: 2rem;
+}
+
+/* Importation de la police 'Hack' */
+@font-face {
+    font-family: 'Hack';
+    src: url('fonts/Hack-Regular.woff2') format('woff2'),
+         url('fonts/Hack-Regular.woff') format('woff'),
+         url('fonts/Hack-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Styles de base */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    font-size: var(--font-size-base);
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(var(--color-primary) 1px, transparent 1px);
+    background-size: 3px 3px;
+    animation: rotateBackground 20s linear infinite;
+    pointer-events: none;
+    opacity: 0.1;
+    transition: background-image var(--transition-duration);
+    z-index: 1;
+}
+
+div {
+    border: 3px solid var(--color-border);
+    box-shadow: 0 0 10px var(--color-primary);
+    text-align: center;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 25px;
+}
+
+h1 {
+    font-size: 100px;
+}
+
+p {
+    font-size: 20px;
+}
+
+a {
+    color: var(--color-primary);
+}
