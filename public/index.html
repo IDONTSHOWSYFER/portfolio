@@ -46,7 +46,7 @@
     <header>
         <nav>
             <div class="logo-character">
-                <img src="img/logo-portfolio.png" alt="Logo">
+                <img src="img/logo-portfolio.png" alt="Logo" href="index.html">
             </div>
             <div class="logo">
                 <!-- Logo ou nom -->
@@ -91,11 +91,11 @@
 <div id="cv-modal" class="modal" aria-hidden="true">
     <div class="modal-content" role="dialog" aria-labelledby="cv-title" aria-describedby="cv-description">
         <button class="close-modal" aria-label="Close CV Modal">&times;</button>
-        <h2 id="cv-title">Mon CV</h2>
+        <h2 id="cv-title">My CV</h2>
         <div class="cv-viewer">
             <img src="img/cv-git.png" alt="CV de Syfer">
         </div>
-        <a href="https://idontshowsyfer.github.io/portfolio/pdf-git.pdf" download class="btn">Télécharger le CV</a>
+        <a href="https://idontshowsyfer.github.io/portfolio/pdf-git.pdf" download class="btn">Download CV</a>
     </div>
 </div>
 
@@ -279,6 +279,9 @@
         </div>
         <button type="submit" class="btn button-submit">Send</button>
         </form>
+        <div class="loading">
+            <p>Loading... <span>█</span></p>
+        </div>
     </section>
     <!--<?php
     // Afficher un message de succès si redirigé avec succès
@@ -289,7 +292,9 @@
     }
     */
     ?>-->
-
+    <button id="scroll-top">
+        <i class="fa fa-arrow-up"></i> <!-- Vous pouvez utiliser une icône ici -->
+    </button>
     <!-- Pied de page -->
     <footer>
         <p>&copy; <span id="current-year"></span> SYFER. All rights reserved.</p>
@@ -312,7 +317,7 @@
             }
         });
     </script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!-- MailJs -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </body>
 
 </html>

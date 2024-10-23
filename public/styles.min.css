@@ -671,13 +671,55 @@ a:focus, button:focus, input:focus, textarea:focus {
     font-size: 1.25rem;
 }
 
-@media (min-width: 992px) {
-    h1 {
-        font-size: 3rem;
+body {
+    background-color: #000; /* Fond noir */
+    color: #00ff00; /* Texte vert */
+    font-family: 'Courier New', Courier, monospace; /* Police de style rétro */
+}
+
+.loading {
+    display: none; /* Masquer par défaut */
+    position: fixed; /* Positionner par rapport à la fenêtre */
+    top: 50%; /* Centrer verticalement */
+    left: 50%; /* Centrer horizontalement */
+    transform: translate(-50%, -50%); /* Ajuster la position pour un centrage parfait */
+    text-align: center; /* Centrer le texte */
+    font-size: 36px; /* Taille du texte plus grande */
+    color: #00ff00; /* Couleur du texte vert */
+    font-family: 'Courier New', Courier, monospace; /* Police de style rétro */
+    background-color: rgba(0, 0, 0, 0.8); /* Fond noir transparent */
+    padding: 20px; /* Espacement autour du texte */
+    border: 2px solid #00ff00; /* Bordure verte */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 0 20px #00ff00; /* Ombre pour un effet lumineux */
+    z-index: 9999; /* S'assurer que la div est au-dessus des autres éléments */
+    animation: pulse 1s infinite; /* Animation de pulsation */
+}
+
+/* Animation de pulsation */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
     }
-    .btn {
-        padding: 1rem 2rem;
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
     }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Animation clignotante pour le symbole */
+.loading span {
+    display: inline-block;
+    font-size: 48px; /* Taille plus grande pour le symbole */
+    animation: blink 1s infinite; /* Animation clignotante */
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 /* Media Queries pour une réactivité optimale */

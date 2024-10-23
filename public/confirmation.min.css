@@ -101,3 +101,36 @@ p {
 a {
     color: var(--color-primary);
 }
+
+@media (max-width: 780px) {
+    h1 {
+        font-size: 50px;
+    }
+    p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    h1 {
+        font-size: 30px;
+    }
+    p {
+        font-size: 10px;
+    }
+    a {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 300px) {
+    h1 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 7px;
+    }
+    a {
+        font-size: 7px;
+    }
+}
