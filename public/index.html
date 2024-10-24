@@ -46,7 +46,9 @@
     <header>
         <nav>
             <div class="logo-character">
-                <img src="img/logo-portfolio.png" alt="Logo" href="index.html">
+                <img src="img/dark-theme/logo-portfolio-dark.png"
+                    data-light-src="img/light-theme/logo-portfolio-light.png"
+                    data-dark-src="img/dark-theme/logo-portfolio-dark.png" alt="Logo" class="theme-switchable">
             </div>
             <div class="logo">
                 <!-- Logo ou nom -->
@@ -64,48 +66,42 @@
                 <span></span>
                 <span></span>
             </div>
+
+            <!-- Bouton de basculement du thème -->
+            <button id="theme-toggle-button" class="theme-toggle-button" aria-label="Basculer le thème sombre/clair">
+                <i class="fa-solid fa-sun"></i>
+            </button>
         </nav>
     </header>
 
-<!-- Section d'accueil -->
-<section id="accueil">
-    <div class="hero">
-        <h1>Welcome, I'm 𝕾𝖄𝕱𝕰𝕽</h1>
-        <p>Smart Web Developer</p>
-        <a href="#contact" class="btn">Contact</a>
-        <button class="btn open-modal" data-modal="cv-modal-download">CV</button> <!-- Ouverture de la modale de téléchargement -->
-    </div>
-</section>
-
-<!-- Modal CV avec image pour téléchargement -->
-<div id="cv-modal-download" class="modal" aria-hidden="true">
-    <div class="modal-content">
-        <button class="close-modal" aria-label="Close CV Modal">&times;</button>
-        <h2>My CV</h2>
-        <img src="img/cv-git.png" class="cv-git" alt="CV de Syfer">
-        <a href="pdf-git.pdf" download class="btn">Download CV</a>
-    </div>
-</div>
-
-<!-- Modal CV Combinée -->
-<div id="cv-modal" class="modal" aria-hidden="true">
-    <div class="modal-content" role="dialog" aria-labelledby="cv-title" aria-describedby="cv-description">
-        <button class="close-modal" aria-label="Close CV Modal">&times;</button>
-        <h2 id="cv-title">My CV</h2>
-        <div class="cv-viewer">
-            <img src="img/cv-git.png" alt="CV de Syfer">
+    <!-- Section d'accueil -->
+    <section id="accueil">
+        <div class="hero">
+            <h1>Welcome, I'm 𝕾𝖄𝕱𝕰𝕽</h1>
+            <p>Smart Web Developer</p>
+            <a href="#contact" class="btn">Contact</a>
+            <button class="btn open-modal" data-modal="cv-modal-download">CV</button>
+            <!-- Ouverture de la modale de téléchargement -->
         </div>
-        <a href="https://idontshowsyfer.github.io/portfolio/pdf-git.pdf" download class="btn">Download CV</a>
+    </section>
+
+    <!-- Modal CV avec image pour téléchargement -->
+    <div id="cv-modal-download" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close CV Modal">&times;</button>
+            <h2>My CV</h2>
+            <img src="img/theme/cv-git.png" class="cv-git" alt="CV de Syfer">
+            <a href="pdf-git.pdf" download class="btn">Download CV</a>
+        </div>
     </div>
-</div>
 
     <!-- Section À Propos -->
     <section id="apropos">
         <h2>About Me</h2>
         <div class="content">
             <div class="photo">
-                <!-- Votre photo -->
-                <img src="img/me.png" alt="Photo de Syfer">
+                <img src="img/dark-theme/me-dark.png" data-light-src="img/light-theme/me-light.png"
+                    data-dark-src="img/dark-theme/me-dark.png" alt="Syfer" class="theme-switchable">
             </div>
             <div class="texte">
                 <p>Developer with <a href="https://xcompro.systeme.io/systemz">N/A</a> years of experience in Web
@@ -209,39 +205,49 @@
         <h2>My Projects</h2>
         <div class="projects">
             <div class="project">
-                <img src="img/iagyki.gif" alt="Projet IAGYKI">
+                <img src="img/dark-theme/iagyki-dark.gif" data-light-src="img/light-theme/iagyki-light.gif"
+                    data-dark-src="img/dark-theme/iagyki-dark.gif" alt="Projet IAGYKI" class="theme-switchable">
                 <h3>IAGYKI</h3>
                 <p>Web3 Education Structure.</p>
-                <button class="btn open-modal" data-modal="project-modal" data-title="IAGYKI" data-img="img/iagyki-modal.gif"
-                    data-description="High-Sql to Hack Life." data-link="https://www.societe.com/etablissement/iagyki-94979177600014.html">
+                <button class="btn open-modal" data-modal="project-modal" data-title="IAGYKI"
+                    data-img-light="img/light-theme/iagyki-modal-light.gif"
+                    data-img-dark="img/dark-theme/iagyki-modal-dark.gif" data-description="High-Sql to Hack Life."
+                    data-link="https://www.societe.com/etablissement/iagyki-94979177600014.html">
                     See the Project
                 </button>
             </div>
             <div class="project">
-                <img src="img/xcompro.gif" alt="Formation XCOMPR0">
+                <img src="img/dark-theme/xcompro-dark.gif" data-light-src="img/light-theme/xcompro-light.gif"
+                    data-dark-src="img/dark-theme/xcompro-dark.gif" alt="Formation XCOMPR0" class="theme-switchable">
                 <h3>XCOMPR0</h3>
                 <p>Online Business Training.</p>
                 <button class="btn open-modal" data-modal="project-modal" data-title="XCOMPR0"
-                    data-img="img/xcompro-modal.gif" data-description="Becoming profitable online."
+                    data-img-light="img/light-theme/xcompro-modal-light.gif"
+                    data-img-dark="img/dark-theme/xcompro-modal-dark.gif" data-description="Becoming profitable online."
                     data-link="https://linktr.ee/xcompro">
                     See the Project
                 </button>
             </div>
             <div class="project">
-                <img src="img/grum.gif" alt="Projet Grum">
+                <img src="img/dark-theme/grum-dark.gif" data-light-src="img/light-theme/grum-light.gif"
+                    data-dark-src="img/dark-theme/grum-dark.gif" alt="Projet Grum" class="theme-switchable">
                 <h3>𝓖𝓻𝓾𝓶</h3>
                 <p>Viral Cryptocurrency.</p>
-                <button class="btn open-modal" data-modal="project-modal" data-title="Grum" data-img="img/adn-modal.gif"
+                <button class="btn open-modal" data-modal="project-modal" data-title="Grum"
+                    data-img-light="img/light-theme/adn-modal-light.gif" data-img-dark="img/dark-theme/adn-modal-dark.gif"
                     data-description="The most memegonist shitcoin in existence." data-link="http://grumcoin.fun">
                     See the Project
                 </button>
             </div>
             <div class="project">
-                <img src="img/ltc.gif" alt="Projet LearnToCode">
+                <img src="img/dark-theme/ltc-dark.gif" data-light-src="img/light-theme/ltc-light.gif"
+                    data-dark-src="img/dark-theme/ltc-dark.gif" alt="Projet LearnToCode" class="theme-switchable">
                 <h3>LTC</h3>
                 <p>Learn to Code.</p>
-                <button class="btn open-modal" data-modal="project-modal" data-title="LTC" data-img="img/ltc-modal.gif"
-                    data-description="Programming Learning Platform." data-link="#">
+                <button class="btn open-modal" data-modal="project-modal" data-title="LTC"
+                    data-img-light="img/light-theme/ltc-modal-light.gif"
+                    data-img-dark="img/dark-theme/ltc-modal-dark.gif" data-description="Programming Learning Platform."
+                    data-link="#">
                     Soon..
                 </button>
             </div>
@@ -252,9 +258,11 @@
     <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title"
         aria-describedby="modal-description">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal" aria-label="Close Modal">&times;</span>
             <h3 id="modal-title">Project Title</h3>
-            <img id="modal-img" src="#" alt="Image du Projet" style="width:100%;">
+            <img id="modal-img" src="img/dark-theme/project-dark.png" data-light-src="img/light-theme/project-light.png"
+                data-dark-src="img/dark-theme/project-dark.png" alt="Image du Projet" class="theme-switchable"
+                style="width:100%;">
             <p id="modal-description">Project description...</p>
             <a href="#" id="modal-link" class="btn">Access the project</a>
         </div>
@@ -264,20 +272,20 @@
     <section id="contact">
         <h2>Contact Me</h2>
         <form id="contactForm"> <!-- Utilisation de EmailJS pour la soumission -->
-        <!-- action="controller.php" method="post" --> <!-- PHPMailer -->
-        <div class="form-group">
-            <label for="name">Name :</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">E-mail :</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn button-submit">Send</button>
+            <!-- action="controller.php" method="post" --> <!-- PHPMailer -->
+            <div class="form-group">
+                <label for="name">Name :</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn button-submit">Send</button>
         </form>
         <div class="loading">
             <p>Loading... <span>█</span></p>

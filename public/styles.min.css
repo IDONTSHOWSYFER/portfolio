@@ -1,5 +1,4 @@
-/* Définition des variables CSS pour une meilleure maintenabilité */
-/* Thème sombre */
+/* Dark Theme Variables */
 :root {
     --color-background: #000000;
     --color-primary: #00ff00;
@@ -9,11 +8,8 @@
     --color-border: #00ff00;
     --color-button-text: #000000;
     --color-modal-bg: rgba(0, 0, 0, 0.8);
-
     --font-family: 'Hack', monospace;
     --transition-duration: 0.3s;
-
-    /* Tailles de police responsive */
     --font-size-base: 16px;
     --font-size-h1: 2.5rem;
     --font-size-h2: 2rem;
@@ -21,25 +17,64 @@
     --font-size-h4: 1.5rem;
     --font-size-h5: 1.25rem;
     --font-size-h6: 1rem;
-
-    /* Largeurs */
     --max-width: 1200px;
     --padding-section: 2rem;
+    --button-bg: #000000;
+    --button-text: #00ff00;
+    --color-shadow: rgba(0, 255, 0, 0.3);
+    --footer-social-bg: #000000;
+}
+
+/* Light Theme Variables */
+.light-theme {
+    --color-background: #ffffff;
+    --color-primary: #0000ff;
+    --color-secondary: #0000cc;
+    --color-text: #000000;
+    --color-section-bg: #f0f0f0;
+    --color-border: #0000ff;
+    --color-button-text: #ffffff;
+    --color-modal-bg: rgba(255, 255, 255, 0.8);
+    --button-bg: #ffffff;
+    --button-text: #0000ff;
+    --color-shadow: rgba(0, 0, 255, 0.3);
+    --footer-social-bg: #ffffff;
+}
+
+/* Bouton de basculement du thème */
+.theme-toggle-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+    margin-left: 1rem;
+}
+
+.theme-toggle-button:hover {
+    background-color: #f0f0f0;
 }
 
 /* Importation de la police 'Hack' */
 @font-face {
     font-family: 'Hack';
     src: url('fonts/Hack-Regular.woff2') format('woff2'),
-         url('fonts/Hack-Regular.woff') format('woff'),
-         url('fonts/Hack-Regular.ttf') format('truetype');
+        url('fonts/Hack-Regular.woff') format('woff'),
+        url('fonts/Hack-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 /* Styles de base */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -61,7 +96,12 @@ body {
 }
 
 /* Typographie */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: bold;
     margin-bottom: 1rem;
 }
@@ -72,8 +112,8 @@ section h2 {
     color: var(--color-primary);
 }
 
-p { 
-    margin-bottom: 1rem; 
+p {
+    margin-bottom: 1rem;
 }
 
 a {
@@ -115,7 +155,7 @@ nav {
 nav .logo-character {
     width: auto;
     max-width: 100px;
-    z-index: 999; /* Ajusté pour éviter le conflit avec .burger */
+    z-index: 999;
 }
 
 nav .logo-character img {
@@ -172,7 +212,7 @@ nav .burger {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    z-index: 2001; /* Augmenté pour être au-dessus de .logo-character */
+    z-index: 2001;
 }
 
 nav .burger span {
@@ -185,7 +225,7 @@ nav .burger span {
 }
 
 /* Responsive Navigation */
-@media (max-width: 768px) { /* Utilisation directe de 768px */
+@media (max-width: 768px) {
     nav .nav-links {
         position: fixed;
         right: 0;
@@ -215,7 +255,7 @@ nav .burger span {
     }
 
     nav .burger span {
-        background: var(--color-primary); /* Assurez-vous que les spans sont visibles */
+        background: var(--color-primary);
     }
 }
 
@@ -292,13 +332,22 @@ section {
 }
 
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
 }
 
 @keyframes blink {
-    from, to { border-color: transparent }
-    50% { border-color: var(--color-primary) }
+    from,
+    to {
+        border-color: transparent
+    }
+    50% {
+        border-color: var(--color-primary)
+    }
 }
 
 /* Boutons */
@@ -332,7 +381,7 @@ section {
 
 .cv-git {
     width: 100%;
-    height: auto; /* Maintient le ratio de l'image */
+    height: auto;
 }
 
 /* Sections de contenu */
@@ -342,20 +391,27 @@ section {
     padding: var(--padding-section) 1rem;
 }
 
-#apropos, #competences, #projets, #contact {
+#apropos,
+#competences,
+#projets,
+#contact {
     padding: var(--padding-section) 1rem;
     width: 100vw;
 }
 
-#apropos .content, #competences .skills, #projets .projects {
+#apropos .content,
+#competences .skills,
+#projets .projects {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 2rem;
     align-items: center;
 }
 
-@media (min-width: 576px) { /* Remplacé var(--breakpoint-sm) par 576px */
-    #apropos .content, #competences .skills, #projets .projects {
+@media (min-width: 576px) {
+    #apropos .content,
+    #competences .skills,
+    #projets .projects {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
@@ -376,11 +432,13 @@ section {
     box-shadow: 0 0 10px var(--color-primary);
 }
 
-.skills, .projects {
+.skills,
+.projects {
     grid-gap: 2rem;
 }
 
-.skill, .project {
+.skill,
+.project {
     background-color: var(--color-section-bg);
     padding: 1rem;
     border: 2px solid var(--color-border);
@@ -388,9 +446,10 @@ section {
     transition: transform var(--transition-duration), box-shadow var(--transition-duration);
 }
 
-.skill:hover, .project:hover {
+.skill:hover,
+.project:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 255, 0, 0.3);
+    box-shadow: 0 10px 15px var(--color-shadow);
 }
 
 .project img {
@@ -442,7 +501,8 @@ form {
     color: var(--color-text);
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 0.75rem;
     background-color: var(--color-background);
@@ -452,7 +512,8 @@ form {
     transition: border-color var(--transition-duration), box-shadow var(--transition-duration), background-color var(--transition-duration);
 }
 
-.form-group input:focus, .form-group textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
     outline: none;
     border-color: var(--color-secondary);
     box-shadow: 0 0 5px var(--color-secondary);
@@ -496,17 +557,18 @@ footer {
 footer .socials {
     display: flex;
     justify-content: center;
-    align-items: center; /* Centrer verticalement les icônes */
+    align-items: center;
     margin-top: 1rem;
-    background-color: #000000;
+    background-color: var(--footer-social-bg);
     height: 100px;
+    transition: background-color var(--transition-duration);
 }
 
 footer .socials a {
     margin: 0 1rem;
     transition: transform var(--transition-duration), color var(--transition-duration);
     color: var(--color-primary);
-    font-size: 2rem; /* Ajusté pour une meilleure visibilité */
+    font-size: 2rem;
 }
 
 footer .socials a:hover {
@@ -520,7 +582,6 @@ footer p {
     color: var(--color-text);
 }
 
-/* Styles pour les icônes Font Awesome dans le footer */
 footer .socials a i {
     color: var(--color-primary);
     font-size: 2rem;
@@ -553,12 +614,19 @@ body::before {
 }
 
 @keyframes rotateBackground {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Accessibilité du focus */
-a:focus, button:focus, input:focus, textarea:focus {
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
     outline: 2px dashed var(--color-primary);
     outline-offset: 4px;
 }
@@ -579,7 +647,9 @@ a:focus, button:focus, input:focus, textarea:focus {
 }
 
 @keyframes fadeIn {
-    to { opacity: 1; }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Styles pour les modales */
@@ -613,7 +683,7 @@ a:focus, button:focus, input:focus, textarea:focus {
     max-height: 90%;
     overflow-y: auto;
     position: relative;
-    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+    box-shadow: 0 5px 15px var(--color-shadow);
     transition: background-color var(--transition-duration), color var(--transition-duration), box-shadow var(--transition-duration);
 }
 
@@ -679,25 +749,37 @@ a:focus, button:focus, input:focus, textarea:focus {
     transform: translate(-50%, -50%);
     text-align: center;
     font-size: 36px;
-    color: #00ff00;
+    color: var(--color-primary);
     background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
-    border: 2px solid #00ff00;
+    border: 2px solid var(--color-primary);
     border-radius: 10px;
-    box-shadow: 0 0 20px #00ff00;
+    box-shadow: 0 0 20px var(--color-primary);
     z-index: 9999;
+}
+
+.light-theme .loading {
+    color: var(--color-secondary);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: var(--color-secondary);
 }
 
 .loading span {
     display: inline-block;
     font-size: 48px;
-    animation: loading-blink 1s infinite; /* Animation clignotante spécifique */
+    animation: loading-blink 1s infinite;
 }
 
 @keyframes loading-blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Media Queries pour une réactivité optimale */
@@ -705,15 +787,16 @@ a:focus, button:focus, input:focus, textarea:focus {
     h1 {
         font-size: 2rem;
     }
+
     nav .nav-links li {
         margin-left: 1rem;
     }
+
     .btn {
         padding: 0.5rem 1rem;
     }
 }
 
-/* Autres ajustements */
 @media (max-width: 400px) {
     nav .nav-links {
         width: 100%;
@@ -723,11 +806,13 @@ a:focus, button:focus, input:focus, textarea:focus {
         font-size: 22px;
     }
 
-    .form-group input, .form-group textarea {
+    .form-group input,
+    .form-group textarea {
         padding: 0.5rem;
     }
 
-    .btn, .button-submit {
+    .btn,
+    .button-submit {
         padding: 0.5rem 1rem;
     }
 }

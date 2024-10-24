@@ -13,6 +13,16 @@
     --font-family: 'Hack', monospace;
     --transition-duration: 0.3s;
 
+ /* Mode jour */
+.light-theme {
+    --color-background: #ffffff;
+    --color-primary: #0000ff;
+    --color-secondary: #0000cc;
+    --color-text: #000000;
+    --color-section-bg: #f0f0f0;
+    --color-border: #0000ff;
+}
+
     /* Tailles de police responsive */
     --font-size-base: 16px;
     --font-size-h1: 2.5rem;
@@ -79,6 +89,10 @@ body::before {
     opacity: 0.1;
     transition: background-image var(--transition-duration);
     z-index: 1;
+}
+
+body.light-theme::before {
+    background-image: radial-gradient(var(--color-primary) 1px, transparent 1px);
 }
 
 div {
