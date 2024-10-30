@@ -1,0 +1,7 @@
+config/
+controllers/
+models/
+node_modules/
+private/
+vendor/
+views/

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmation</title>
+    <link id="favicon" rel="icon" href="/public/assets/img/dark-theme/favicon-dark.png" type="image/x-icon">
+    <link rel="stylesheet" href="/public/assets/css/confirmation.min.css">
+
+    <!-- Font Awesome via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <button id="theme-toggle-button" class="theme-toggle-button" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="confirmation-main">
+        <div class="confirmation-container">
+            <div class="confirmation-header">
+                <img src="/public/assets/img/dark-theme/logo.png" alt="SYFER Logo" class="confirmation-logo theme-switchable" data-light-src="/public/assets/img/light-theme/logo.png" data-dark-src="/public/assets/img/dark-theme/logo.png">
+                <a href="index.html" class="site-name">SYFER</a>
+            </div>
+            <h1>Thank You!</h1>
+            <p>Your message has been successfully sent. We appreciate you reaching out to us.</p>
+            <p>We will get back to you as soon as possible.</p>
+            <a href="index.html" class="btn">Return to the Homepage</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="socials">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/IDONTSHOWSYFER" aria-label="GitHub"><i class="fa-brands fa-github-alt"></i></a>
+            <a href="https://x.com/0xsyfer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://t.me/grumcoin" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#" aria-label="Shopify"><i class="fa-brands fa-shopify"></i></a>
+        </div>
+        <p>&copy; <span id="current-year"></span> SYFER. All rights reserved.</p>
+    </footer>
+
+    <!-- Embedded JavaScript for Theme Switching -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            const favicon = document.getElementById('favicon');
+            const currentYearSpan = document.getElementById('current-year');
+            const themeToggleButton = document.getElementById('theme-toggle-button');
+
+            // Function to update theme
+            const updateTheme = (isLight) => {
+                if (isLight) {
+                    document.body.classList.add('light-theme');
+                    favicon.href = "/public/assets/img/light-theme/favicon-light.png";
+                    themeToggleButton.innerHTML = '<i class="fa-solid fa-sun"></i>';
+                } else {
+                    document.body.classList.remove('light-theme');
+                    favicon.href = "/public/assets/img/dark-theme/favicon-dark.png";
+                    themeToggleButton.innerHTML = '<i class="fa-solid fa-moon"></i>';
+                }
+
+                // Update theme-switchable images
+                const themeSwitchableElements = document.querySelectorAll('.theme-switchable');
+                themeSwitchableElements.forEach(el => {
+                    el.src = isLight ? el.getAttribute('data-light-src') : el.getAttribute('data-dark-src');
+                });
+            };
+
+            // Apply saved theme on load
+            updateTheme(currentTheme === 'light');
+
+            // Set current year
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Theme toggle button click event
+            themeToggleButton.addEventListener('click', () => {
+                const isLight = document.body.classList.toggle('light-theme');
+                localStorage.setItem('theme', isLight ? 'light' : 'dark');
+                updateTheme(isLight);
+            });
+        });
+    </script>
+</body>
+
+</html>
